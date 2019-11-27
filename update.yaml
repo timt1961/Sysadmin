@@ -1,0 +1,21 @@
+- name: Update centos hosts
+  hosts:
+    - centos
+  tasks:
+    - name: execute update
+      become: yes
+      yum:
+        name: "*"
+        state: latest
+
+- name: Update ubuntu hosts
+  hosts:
+    - ubuntu
+  become: yes
+  tasks:
+    - name: Update the cache
+      apt:
+        update_cache: yes
+    - name: Update the packages 
+      apt:
+        upgrade: dist
