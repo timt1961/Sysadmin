@@ -1,0 +1,2 @@
+ansible_user: '{{ ubuntu_user}}'
+ansible_become_pass: '{{ ubuntu_sudo_pass}}'
